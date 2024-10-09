@@ -1,0 +1,9 @@
+##################################################
+##  configuration file.                     ##
+## Use this file to customize your  analysis ##
+##################################################
+
+SE_SUFFIX: ".fastq"
+R1_SUFFIX: "_R1_001.fastq.gz"
+R2_SUFFIX: "_R2_001.fastq.gz"
+STAR_INDEX_PATH: "/storage/zhangyanxiaoLab/share/STAR_index/"
