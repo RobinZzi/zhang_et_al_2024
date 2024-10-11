@@ -47,3 +47,22 @@ ggplot(cell.prop_immune_merge,aes(sample,proportion,fill=origin))+
   theme(axis.title.x = element_text(size = 12),axis.title.y = element_text(size = 0),legend.text=element_text(size = 12))+
   theme(axis.text.x = element_text(size = 10,color="black",angle = 45,hjust = 1),axis.text.y = element_text(size = 10,color="black"))
 
+
+#Sup_Fig_1_G
+immuneprop_plot <- function(data) {
+  ggplot(data,aes(sample,proportion,fill=origin))+
+    geom_bar(stat="identity",position="fill")+
+    ggtitle("")+
+    scale_fill_manual(values=my36colors)+
+    theme_bw()+
+    theme(axis.ticks.length=unit(0.5,'cm'))+
+    guides(fill=guide_legend(title=NULL))+
+    labs(x=paste(data[1,4]))+
+    theme(axis.title.x = element_text(size = 12),axis.title.y = element_text(size = 0),legend.text=element_text(size = 12))+
+    theme(axis.text.x = element_text(size = 10,color="black",angle = 45,hjust = 1),axis.text.y = element_text(size = 10,color="black"))+
+    NoLegend()
+}
+
+immuneprop_plot_list <- lapply(immune_merge_data_list, immuneprop_plot)
+
+do.call(grid.arrange, c(immuneprop_plot_list, ncol = 5))
