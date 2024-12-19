@@ -26,5 +26,5 @@ DimPlot(bigseu,group.by = "group",cols= c("#57C3F3","#E95C59","#f9ed69"),shuffle
 
 #Fig_1_E
 DimPlot(bigseu,group.by = "patient",cols=c('HCC1'='#E95C59','HCC2'='#E5D2DD','HCC3'='#BD956A',
-                                           'HCC4'='#57C3F3','HCC5'='#E95C59','HCC6'='#F1BB72',
+                                           'HCC4'='#57C3F3','HCC5'='#3A6963','HCC6'='#F1BB72',
                                            'HCC7'='#8C549C','HCC8'='#D6E7A3','HCC9'='#E59CC4'),shuffle = T) #patient

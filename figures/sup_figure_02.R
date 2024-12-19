@@ -19,7 +19,7 @@ ggplot(sc_cor_cmn,aes(type,cor,color=type))+
   facet_grid(~patient)+
   scale_color_manual(values =c('#b11a2b','#4a74a4'))+
   stat_compare_means(comparisons = list(c("cross","self")),
-                     method = "wilcox.test",label = "p.signif",
+                     method = "wilcox.test", 
                      label.y =1 )+theme_bw() +
   theme(panel.background = element_blank(),
         panel.grid = element_blank(),  
@@ -34,7 +34,7 @@ ggplot(sc_cor_sn,aes(type,cor,color=type))+
   facet_grid(~patient)+
   scale_color_manual(values =c('#b11a2b','#4a74a4'))+
   stat_compare_means(comparisons = list(c("cross","self")),
-                     method = "wilcox.test",label = "p.signif",
+                     method = "wilcox.test",
                      label.y =1 )+theme_bw() +
   theme(panel.background = element_blank(),
         panel.grid = element_blank(),  
@@ -51,7 +51,7 @@ ggplot(sta_prim_sum_snd,aes(nd_type,cor,color=nd_type))+
   geom_boxplot(width=0.5,outlier.size=0)+
   scale_color_manual(values =c('#b11a2b','#4a74a4'))+
   stat_compare_means(comparisons = list(c("SN","CMN")),
-                     method = "wilcox.test",label = "p.signif",
+                     method = "wilcox.test", 
                      label.y =1 )+theme_bw() +
   facet_grid(~type)+
   theme(panel.background = element_blank(),

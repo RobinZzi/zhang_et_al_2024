@@ -3,11 +3,11 @@ ggplot(immune_prop_cmnsn_result_merge_rm89,aes(x=type,y=proportion,color=type))+
   geom_boxplot(outlier.size = 0,outlier.alpha = 1,outlier.color = "white")+
   geom_jitter(width = 0.1,shape = 20,size=0.5)+
   facet_wrap(~ celltype)+
-  ylim(0,1)+
+  ylim(0,0.5)+
   scale_color_manual(values=c("cmn"="#d72323","sn"="#3f72af"))+
   stat_compare_means(comparisons = list(c("cmn","sn")),
-                     method = "wilcox.test",label = "p.signif",
-                     label.y = 0.8 )+theme_bw()+
+                     method = "wilcox.test",
+                     label.y = 0.9 )+theme_bw()+
   theme(panel.background = element_blank(),
         panel.grid = element_blank())
 
@@ -19,7 +19,7 @@ ggplot(cmnsn_cellchat_sum_remove_mp_drop,aes(x=type,y=interactions,fill=type))+
        y= "interaction",
        title="10x excluded")+
   stat_compare_means(comparisons = list(c("cmn","sn")),
-                     method = "wilcox.test",label = "p.signif",
+                     method = "wilcox.test",
                      label.y =200 )+theme_bw()
 
 
@@ -31,13 +31,13 @@ ggplot(pathway_sum_cmn_sn_sig,aes(x=type,y=contribution.scaled,color=type))+
        title="10x excluded")+
   scale_color_manual(values=c("sn"="#3f72af","cmn"="#d72323"))+
   stat_compare_means(comparisons = list(c("cmn","sn")),
-                     method = "wilcox.test",label = "p.signif",paired = F,
-                     label.y =1.7)+theme_bw()+
+                     method = "t.test",paired = F,
+                     label.y =0.7)+theme_bw()+
   theme(panel.background = element_blank(),
         panel.grid = element_blank(), 
         axis.text.x = element_text(size=15,face="bold",angle = 45,hjust = 1,color = 'black'))+
   facet_grid(~name)+
-  ylim(0,1.8)
+  ylim(0,0.8)
 
 
 #Fig_2_D
@@ -48,7 +48,7 @@ ggplot(prop_result_ptst_merge,aes(x=type,y=proportion,color=type))+
   ylim(0,0.6)+
   scale_color_manual(values=c("pt"="#d72323","st"="#3f72af"))+
   stat_compare_means(comparisons = list(c("pt","st")),
-                     method = "wilcox.test",label = "p.signif",
+                     method = "wilcox.test",
                      label.y = 0.5 )+theme_bw()+
   theme(panel.background = element_blank(),
         panel.grid = element_blank())
@@ -60,7 +60,7 @@ ggplot(sta_prim_sum_cmn,aes(type,cor,color=type))+
   facet_grid(~sample)+
   scale_color_manual(values =c('#b11a2b','#4a74a4'))+
   stat_compare_means(comparisons = list(c("primary","satellite")),
-                     method = "wilcox.test",label = "p.signif",
+                     method = "wilcox.test",
                      label.y =1 )+theme_bw() +
   theme(panel.background = element_blank(),
         panel.grid = element_blank(),  
