@@ -15,7 +15,7 @@ netVisual_circle(cellchat_hcc3_pt2@net$count,
 
 #Sup_Fig_2_B
 ggplot(sc_cor_cmn,aes(type,cor,color=type))+
-  geom_boxplot(width=0.5,outlier.size=0)+
+  geom_boxplot(width=0.5,outlier.shape = NA)+
   facet_grid(~patient)+
   scale_color_manual(values =c('#b11a2b','#4a74a4'))+
   stat_compare_means(comparisons = list(c("cross","self")),
@@ -30,7 +30,7 @@ ggplot(sc_cor_cmn,aes(type,cor,color=type))+
         legend.title =element_blank())
 
 ggplot(sc_cor_sn,aes(type,cor,color=type))+
-  geom_boxplot(width=0.5,outlier.size=0)+
+  geom_boxplot(width=0.5,outlier.shape = NA)+
   facet_grid(~patient)+
   scale_color_manual(values =c('#b11a2b','#4a74a4'))+
   stat_compare_means(comparisons = list(c("cross","self")),
@@ -48,7 +48,7 @@ ggplot(sc_cor_sn,aes(type,cor,color=type))+
 
 #Sup_Fig_2_C
 ggplot(sta_prim_sum_snd,aes(nd_type,cor,color=nd_type))+
-  geom_boxplot(width=0.5,outlier.size=0)+
+  geom_boxplot(width=0.5,outlier.shape = NA)+
   scale_color_manual(values =c('#b11a2b','#4a74a4'))+
   stat_compare_means(comparisons = list(c("SN","CMN")),
                      method = "wilcox.test", 

@@ -3,7 +3,7 @@ ggplot(immune_prop_cmnsn_result_merge_rm89,aes(x=type,y=proportion,color=type))+
   geom_boxplot(outlier.size = 0,outlier.alpha = 1,outlier.color = "white")+
   geom_jitter(width = 0.1,shape = 20,size=0.5)+
   facet_wrap(~ celltype)+
-  ylim(0,0.5)+
+  ylim(0,1)+
   scale_color_manual(values=c("cmn"="#d72323","sn"="#3f72af"))+
   stat_compare_means(comparisons = list(c("cmn","sn")),
                      method = "wilcox.test",
@@ -45,11 +45,12 @@ ggplot(prop_result_ptst_merge,aes(x=type,y=proportion,color=type))+
   geom_boxplot(outlier.size = 0,outlier.alpha = 1,outlier.color = "white")+
   geom_jitter(width = 0.1,shape = 20,size=0.5)+
   facet_wrap(~ celltype)+
-  ylim(0,0.6)+
+  ylim(0,0.2)+
   scale_color_manual(values=c("pt"="#d72323","st"="#3f72af"))+
   stat_compare_means(comparisons = list(c("pt","st")),
-                     method = "wilcox.test",
-                     label.y = 0.5 )+theme_bw()+
+                    method = "wilcox.test",
+                   label.y = 0.5 )+
+  theme_bw()+
   theme(panel.background = element_blank(),
         panel.grid = element_blank())
 
